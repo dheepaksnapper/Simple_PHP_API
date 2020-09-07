@@ -1,0 +1,4 @@
+1. https://medium.com/better-programming/how-to-build-a-simple-restful-api-in-php-c719f03cfa0a - fully implemented api with JWT authendication
+2. https://www.leaseweb.com/labs/2015/10/creating-a-simple-rest-api-in-php/ - tutorial for API wit PHP byt PHP-CURD-API creator (the main logigs code)
+3. https://www.codeofaninja.com/2011/12/php-and-mysql-crud-tutorial.html -full step by step tutorial no PHP API with authentication (JWT)
+4. https://webdamn.com/create-simple-rest-api-with-php-mysql/ - PHP MySQL API good logigs and codes with  Rewrite Rule with PHP for Clean URLs
