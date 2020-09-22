@@ -1,12 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 include_once '../../autoload.php';
-=======
-include_once '../database/Database.php';
-
-
->>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
 
 class Order extends Database {
     

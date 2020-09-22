@@ -1,18 +1,9 @@
 <?php
 
-<<<<<<< HEAD
 require_once '../../vendor/jwt/jwt.php';
 require_once '../../vendor/jwt/ExpiredException.php';
 require_once '../../vendor/jwt/SignatureInvalidException.php';
 
-=======
-require_once '../vendor/jwt/jwt.php';
-require_once '../vendor/jwt/ExpiredException.php';
-require_once '../vendor/jwt/SignatureInvalidException.php';
-include_once '../database/Database.php';
-
-use \Firebase\JWT\JWT;
->>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
 
 
 class TokenAuth extends Database{
@@ -20,11 +11,7 @@ class TokenAuth extends Database{
     private $db_connection;
     private $table = 'user_table';
     private $key = 'Lucid123';
-<<<<<<< HEAD
     private $experi_limit = 900;
-=======
-    private $experi_limit = 120;
->>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
     private $iss = 'localhsost';
 
     public function __construct() {
@@ -52,11 +39,7 @@ class TokenAuth extends Database{
                     )
                 );
         
-<<<<<<< HEAD
                 $token = Firebase\JWT\JWT::encode($payload, $this->key);
-=======
-                $token = JWT::encode($payload, $this->key);
->>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
                 return $token;
             }
             return '';
@@ -69,11 +52,7 @@ class TokenAuth extends Database{
     public function verify_token($token) {
 
         try {
-<<<<<<< HEAD
             $decode = (array) Firebase\JWT\JWT::decode($token, $this->key, array('HS256'));
-=======
-            $decode = (array) JWT::decode($token, $this->key, array('HS256'));
->>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
             $query = 'SELECT * FROM ' . $this->table . ' WHERE user_id=:id AND username=:username';
             $statement = $this->db_connection->prepare($query);
             $statement->bindParam(':id', $decode['userdata']->id, PDO::PARAM_STR);
