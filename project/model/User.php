@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 include_once '../../autoload.php';
+=======
+include_once '../database/Database.php';
+>>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
 
 
 class User extends Database{
@@ -22,7 +26,11 @@ class User extends Database{
     public function create_user() {
         $query = 'INSERT INTO ' . $this->table . ' (user_id, username, email, password) VALUES (:id, :username, :email, :password)';
         try {
+<<<<<<< HEAD
             echo 'indie create()';
+=======
+
+>>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
             $statement = $this->db_connection->prepare($query);
             $statement->bindParam(':id', $this->user_id, PDO::PARAM_STR);
             $statement->bindParam(':username', $this->username, PDO::PARAM_STR);
@@ -32,7 +40,11 @@ class User extends Database{
             return $statement->execute() == 1;
 
         } catch(PDOException $e) {
+<<<<<<< HEAD
             return false;
+=======
+            return flase;
+>>>>>>> 5426c9955237d0efccc7eadc8dfb23b19ba36621
         }
     }
 
