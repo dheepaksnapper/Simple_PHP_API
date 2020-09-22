@@ -67,6 +67,22 @@ class Order extends Database {
         
     }
 
+    public function update_order() {
+        $query = 'UPDATE ' . $this->table . ' SET order_date=:date, item=:item, employee=:employee WHERE order_table.id=:id';
+        try {
+            $statement = $this->db_connection->prepare($query);
+            $statement->bindParam(':date', $this->date, PDO::PARAM_STR);
+            $statement->bindParam(':item',$this->item, PDO::PARAM_STR);
+            $statement->bindParam(':employee',$this->employee, PDO::PARAM_STR);
+            $statement->bindParam(':id',$this->id, PDO::PARAM_INT);
+            return $statement->execute() == 1;
+        } catch(Exception $e) {
+            echo $e;
+            return false;
+        }
+        // UPDATE `order_table` SET `order_date` = '2020-09-19', `item` = 'tea1', `employee` = 'Naveen1' WHERE `order_table`.`id` = 1
+    }
+
 }
 
 ?>
